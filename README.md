@@ -2,7 +2,7 @@
 ## aka simple-bsky-handle-maker
 a simple python script to help make bluesky handles via the command line or whatever
 
-inspired by [SlickDomique/open-handles]((https://github.com/SlickDomique/open-handles), 'cept in python and with hetzner because i'm too dumb to fork their work lol 
+inspired by [SlickDomique/open-handles](https://github.com/SlickDomique/open-handles), 'cept in python and with hetzner because i'm too dumb to fork their work lol 
 
 ### to use: 
 
