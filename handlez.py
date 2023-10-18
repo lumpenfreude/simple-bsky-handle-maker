@@ -23,7 +23,7 @@ def addname():
                            zone_id=zoneid,
                            record_type='TXT',
                            name='_atproto.%s.%s' % (handle, zone),
-                           value=didthing)
+                           value='did=%s' % (didthing))
     print(record)
     return()
 hetznerkey = os.getenv('HETZNER_DNS_TOKEN')
