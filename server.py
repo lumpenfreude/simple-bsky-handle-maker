@@ -1,15 +1,38 @@
 import json
-import requests
 import os
+from flask import Flask, redirect, url_for, request
 from hetzner_dns_tools.zone_list import zone_list
 from hetzner_dns_tools.record_create import record_create
 from hetzner_dns_tools.zone_get import zone_get
+
+@app.route('/success')
+def success(hetznertoken):
+    
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        hetznerdnstoken = request.form['hetznertoken']
+        return redirect(url_for('success', hetznertoken=hetznerdnstoken))
+    else: 
+        hetznerdnstoken = request.form.get('hetznertoken')
+        return redirect(url_for('success', hetznertoken=hetznerdnstoken))
+   
+@app.route('/add_handle')
+def add_handle(hetznertoken, zone_name, handle, did):
+    zoneid = zone_get(hetzner_dns_token=hetznerkey,
+                    zone_name=zone,
+                    id_only=True)
+    record = record_create(hetzner_dns_token=hetznerkey,
+                    zone_id=zoneid,
+                    record_type='TXT',
+                    name='_atproto.%s' % (handle),
+                    value=didthing,
+                    ttl=60)
+    return record 
+
 def listzones():
-    zone_dict = zone_list()
-    print('your zones:')
-    print()
-    for i in zone_dict['zones']:
-        print(i['name'])
+    zones = zone_list()
+    print(zones)
     return()
 def addname():
     print('what zone do you want to add the handle to?')
@@ -45,7 +68,6 @@ while True:
     x = input()
     if x == '1':
         listzones()
-        print()
     elif x == '2':
         addname()
     elif x == '3':
