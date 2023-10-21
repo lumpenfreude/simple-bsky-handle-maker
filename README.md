@@ -20,4 +20,4 @@ if any of that stuff fails, you probably don't have python, or python-pip instal
 
 ### roadmap:
 
-gonna flask it up and make it an interactive webpage, i guess. 
+flask basic stuff done, just need to keep working on it more lol

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>welcome!</title>
+  </head>
+  <body>
+    <form action="http://localhost:5000/index" method="post" />
+      <h1>hello, add a nickname why not?</h1>
+      <p>_atproto. <input type = "text" value = "handle" /> .
+      <select name="zone_select" width="300px" />
+      {% for zone in zones %}
+        <option value={{ zone }} SELECTED>{{ zone }}</option>
+      {% endfor %}
+      </select></p>
+      <p></p>
+      <p>DID Value from Bluesky: <input type = "text" value = "didvalue" /></p>
+      <p><input type = "submit" value = "submit" /></p>
+    </form>
+  </body>
+</html>
